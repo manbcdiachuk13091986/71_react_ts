@@ -1,18 +1,40 @@
-import GlobalStyles from "styles/GlobalStyles";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import GlobalStyles from "styles/GlobalStyles";
+import Layout from "components/Layout/Layout";
+import About from "pages/About/About";
+import Home from "pages/Home/home";
+import User from "pages/Users/components/User/User";
+import Users from "pages/Users/Users";
 // Импорты лекций
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
 // import Lesson07 from "lessons/Lesson07/Lesson07";
 // import Lesson08 from "lessons/Lesson08/Lesson08";
-import Lesson09 from "lessons/Lesson09/Lesson09";
+// import Lesson09 from "lessons/Lesson09/Lesson09";
+// import Lesson10 from "lessons/Lesson10/Lesson10";
+// import Lesson12 from "lessons/Lesson12/Lesson12";
 
 // Импорты домашних работ
 // import Homework07 from "homeworks/Homework07/Homework07";
+// import Homework09 from "homeworks/Homework09/Homework09";
+// import Homework10 from "homeworks/Homework10/Homework10";
+// import Homework12 from "homeworks/Homework12/Homework12";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyles />
+      <Layout>
+        {/* Routes - собирает все маршруты приложение */}
+        <Routes>
+          {/* Route - компонент, в который передаётся маршрут и контент */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/user" element={<User />} />
+        </Routes>
+      </Layout>
+
       {/* Лекция 6 - TypeScript */}
       {/* <Lesson06 /> */}
 
@@ -24,8 +46,17 @@ function App() {
       {/* <Lesson08 /> */}
 
       {/* Лекция 9 - Styling components, control components */}
-      <Lesson09 />
-    </>
+      {/* <Lesson09 /> */}
+      {/* <Homework09 /> */}
+
+      {/* Лекция 10 - useEffect */}
+      {/* <Lesson10 /> */}
+      {/* <Homework10 /> */}
+
+      {/* Лекция 12 - Formik */}
+      {/* <Lesson12 /> */}
+      {/* <Homework12 /> */}
+    </BrowserRouter>
   );
 }
 
