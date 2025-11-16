@@ -1,13 +1,11 @@
 import { useState, type ChangeEvent } from "react";
 
 import Counter from "components/Counter/Counter";
-import {
-  AnimalBox,
+import { AnimalBox,
   BoxInfo,
   InputsWrapper,
   Lesson09Wrapper,
-  Result,
-} from "./styles";
+  Result, } from "./styles";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 
@@ -51,14 +49,18 @@ function Lesson09() {
           name="user_name"
           label="User name"
           id="user_name_id"
-          placeholder="Enter your name" type={"number"}        />
+          placeholder="Enter your name"
+          type={"number"}
+        />
         <Input
           name="user_email"
           label="User email"
           id="user_email_id"
           placeholder="Enter your email"
           value={userEmail}
-          onChange={onChangeEmail} type={"number"}        />
+          onChange={onChangeEmail}
+          type={"number"}
+        />
         <Button name="GET RESULT" onClick={showResult} />
         <Result>{result}</Result>
       </InputsWrapper>

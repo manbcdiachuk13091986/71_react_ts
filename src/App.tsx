@@ -2,10 +2,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import GlobalStyles from "styles/GlobalStyles";
 import Layout from "components/Layout/Layout";
-import About from "pages/About/About";
 import Home from "pages/Home/home";
-import User from "pages/Users/components/User/User";
+import About from "pages/About/About";
 import Users from "pages/Users/Users";
+import User from "pages/Users/components/User/User";
+
 // Импорты лекций
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
 // import Lesson07 from "lessons/Lesson07/Lesson07";

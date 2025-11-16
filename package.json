@@ -12,7 +12,11 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+<<<<<<< HEAD
     "formik": "^2.4.9",
+=======
+    "axios": "^1.13.2",
+>>>>>>> 52e447739f8bcd7ba1ba9f9cdd5d2c074f22e445
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.6",
