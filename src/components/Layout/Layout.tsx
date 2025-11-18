@@ -1,49 +1,47 @@
+import { useNavigate } from "react-router-dom";
+import { v4 } from "uuid";
+
 import {
-  Footer,
+  Footer, 
   Header,
+  HeaderLogoWrapper,
   LayoutComponent,
   Logo,
   Main,
   NavContainer,
-  StyledNavLink,
 } from "./styles";
-import type { LayoutProps } from "./types";
+import type { LayoutProps, NavLink } from "./types";
+import Button from "components/Button/Button";
+import { navLinksData } from "./data";
+import NavigationLink from "components/NavigationLink/NavigationLink";
 
 function Layout({ children }: LayoutProps) {
+  const navigate = useNavigate();
+
+  const navLinks = navLinksData.map(({ path, name }: NavLink) => {
+    return <NavigationLink key={v4()} path={path} name={name} />;
+  });
+
+  const goToHomePage = () => {
+    navigate("/");
+  };
+
+  const goToPreviousPage = () => {
+    navigate(-1);
+  };
+
   return (
     <LayoutComponent>
       <Header>
-        <Logo></Logo>
-        <NavContainer>
-          <StyledNavLink
-            to="/"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? "underline" : "none",
-            })}
-          >
-            Home
-          </StyledNavLink>
-          <StyledNavLink
-            to="/about"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? "underline" : "none",
-            })}
-          >
-            About
-          </StyledNavLink>
-          <StyledNavLink
-            to="/users"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? "underline" : "none",
-            })}
-          >
-            Users
-          </StyledNavLink>
-        </NavContainer>
+        <HeaderLogoWrapper>
+          <Logo onClick={goToHomePage}></Logo>
+          <Button name="<---" onClick={goToPreviousPage} />
+        </HeaderLogoWrapper>
+        <NavContainer>{navLinks}</NavContainer>
       </Header>
       <Main>{children}</Main>
       <Footer>
-        <Logo></Logo>
+        <Logo onClick={goToHomePage}></Logo>
       </Footer>
     </LayoutComponent>
   );

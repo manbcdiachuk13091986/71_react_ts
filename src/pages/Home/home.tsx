@@ -4,4 +4,4 @@ function Home() {
   return <HomePage>Content Home page</HomePage>
 }
 
-export default Home
+export default Home;
